@@ -56,8 +56,3 @@ const StyledDiv = styled.div`
   justify-content: flex-end;
   transition: all .2s;
 `;
-
-
-const StyledDiv1 = styled.div`
-  transform: translateY(10px);
-`;
