@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaPizzaSlice } from 'react-icons/fa';
+import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
+import styled from 'styled-components';
 
 const Header = () => {
   return (
@@ -10,9 +11,9 @@ const Header = () => {
         </div>
         <div className="settings">
           <ul>
-            <li>+</li>
+            <li><StyledAdd /></li>
             <li>
-              <FaPizzaSlice />
+              <StyledPizza />
             </li>
           </ul>
         </div>
@@ -20,5 +21,20 @@ const Header = () => {
     </header>
   );
 };
+
+const StyledPizza = styled(FaPizzaSlice)`
+  display: inline;
+  height: auto;
+  width: 18px;
+  margin-left: 10px;
+  transform: translateX(-3%);
+`;
+
+const StyledAdd = styled(FaPlus)`
+  display: inline;
+  height: auto;
+  width: 15px;
+  transform: translateX(50%);
+`;
 
 export default Header;

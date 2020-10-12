@@ -1,3 +1,4 @@
+// these are the projects other then user projects. These will be always available
 export const collatedTasks = [
   { key: 'INBOX', name: 'Inbox' },
   { key: 'TODAY', name: 'Today' },

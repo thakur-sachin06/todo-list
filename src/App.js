@@ -1,13 +1,19 @@
 import React from 'react';
 import Content from './components/common/Content';
 import Header from './components/common/Header';
+import { ProjectsProvider, SelectedProjectsProvider } from './context';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <Content />
-    </div>
+    <SelectedProjectsProvider>
+      <ProjectsProvider>
+        <div className="App">
+          <Header />
+          <Content />
+        </div>
+      </ProjectsProvider>
+    </SelectedProjectsProvider>
+
   );
 }
 

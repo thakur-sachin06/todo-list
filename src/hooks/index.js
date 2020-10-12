@@ -39,10 +39,10 @@ export const useTasks = (selectedProject) => {
       setTasks(
         selectedProject === 'NEXT_7'
           ? newTasks.filter(
-              (task) =>
-                moment(task.date, 'DD-MM-YYYY').diff(moment(), 'days') <= 7 &&
-                task.archived !== true
-            )
+            (task) =>
+              moment(task.date, 'DD-MM-YYYY').diff(moment(), 'days') <= 7 &&
+              task.archived !== true
+          )
           : newTasks.filter((task) => task.archived !== true)
       );
 
@@ -65,20 +65,20 @@ export const useProjects = () => {
     firebase
       .firestore()
       .collection('projects')
-      .where('userId', '==', 1)
+      .where('userId', '==', '1')
       .orderBy('projectId')
       .get()
       .then((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
-          ...project.data,
+          ...project.data(),
           docId: project.id,
         }));
 
+        // setting state only when projects fetched from firebase different from current projects.
         if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
           setProjects(allProjects);
         }
       });
   }, [projects]);
-
   return { projects, setProjects };
 };
