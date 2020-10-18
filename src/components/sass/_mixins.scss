@@ -7,6 +7,16 @@
   border-radius: 3px;
 }
 
+@mixin project-date-overlay($right, $top) {
+  box-shadow: $generic-box-shadow;
+  position: absolute;
+  width: 60%;
+  z-index: 1;
+  top: $top;
+  right: $right;
+  border-radius: 3px;
+}
+
 @mixin va($va-align: center) {
   display: flex;
   align-items: center;
@@ -72,8 +82,8 @@
   display: flex;
   line-height: 18px;
   color: #333;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
   font-size: 14px;
   list-style-type: none;
   border-bottom: 1px solid #f0f0f0;

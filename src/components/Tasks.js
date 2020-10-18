@@ -4,7 +4,7 @@ import { useTasks } from '../hooks';
 import { collatedTasks } from '../constants';
 import { useSelectedProjectValues, useProjectValues } from '../context';
 import { getTitle, getCollatedTitle, collatedTasksExist } from '../helpers';
-import styled from 'styled-components';
+import { AddTask } from './AddTask';
 
 const Tasks = () => {
   const { selectedProject } = useSelectedProjectValues();
@@ -24,6 +24,7 @@ const Tasks = () => {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line no-undef
     document.title = `${projectName}: TodoList`
   })
 
@@ -38,19 +39,10 @@ const Tasks = () => {
           </li>
         ))}
       </ul>
-      {
-        !tasks.length && <StyledText>No Task Found!</StyledText>
-      }
+
+      <AddTask />
     </div>
   );
 };
-
-const StyledText = styled.div`
-  color: #db4c3f;
-  font-size: 24px;
-  margin-top: 40px;
-  height: min-content;
-  text-transform: uppercase;
-`
 
 export default Tasks;

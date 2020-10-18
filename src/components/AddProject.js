@@ -4,7 +4,7 @@ import { generatePushId } from '../helpers';
 import { useProjectValues } from '../context';
 
 export const AddProject = ({ shouldShow = false }) => {
-  const { setProjects } = useProjectValues();
+  const { projects, setProjects } = useProjectValues();
   const [show, setShow] = useState(shouldShow);
   const [projectName, setProjectName] = useState('');
   const projectId = generatePushId();
@@ -21,7 +21,7 @@ export const AddProject = ({ shouldShow = false }) => {
 
         })
         .then(() => {
-          setProjects([]);
+          setProjects([...projects]);
           setProjectName('');
           setShow(false);
         })

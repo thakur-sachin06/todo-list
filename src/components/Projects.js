@@ -3,7 +3,6 @@ import { useSelectedProjectValues, useProjectValues } from '../context'
 import { IndividualProject } from './IndividualProject';
 
 export const Projects = ({ activeValue = null }) => {
-
   const [active, setActive] = useState(activeValue);
   const { setSelectedProject } = useSelectedProjectValues();
   const { projects } = useProjectValues();

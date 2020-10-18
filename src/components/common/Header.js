@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
 import styled from 'styled-components';
+import { AddTask } from '../AddTask';
 
 const Header = () => {
+  const [showQuickAddTask, setShowQuickAddTask] = useState(false);
+  const [showShouldMain, setShouldShowMain] = useState(false);
   return (
     <header className="header" data-test-id="header">
       <nav>
@@ -11,13 +14,23 @@ const Header = () => {
         </div>
         <div className="settings">
           <ul>
-            <li><StyledAdd /></li>
+            <li
+              onClick={() => setShowQuickAddTask(true)}
+            >
+              <StyledAdd />
+            </li>
             <li>
               <StyledPizza />
             </li>
           </ul>
         </div>
       </nav>
+      <AddTask
+        showQuickAddTask={showQuickAddTask}
+        showAddTaskMain={false}
+        setShowQuickAddTask={setShowQuickAddTask}
+        showShouldMain={showShouldMain}
+      />
     </header>
   );
 };
