@@ -7,16 +7,14 @@ const Header = () => {
   const [showQuickAddTask, setShowQuickAddTask] = useState(false);
   const [showShouldMain, setShouldShowMain] = useState(false);
   return (
-    <header className="header" data-test-id="header">
+    <header className="header" data-testid="header">
       <nav>
         <div className="logo">
           <img src="/images/logo.png" alt="todolist-logo" />
         </div>
         <div className="settings">
           <ul>
-            <li
-              onClick={() => setShowQuickAddTask(true)}
-            >
+            <li onClick={() => setShowQuickAddTask(true)} data-testid="quick-add-task">
               <StyledAdd />
             </li>
             <li>

@@ -10,9 +10,11 @@ const Sidebar = () => {
   const [active, setActive] = useState('inbox');
   const [showProjects, setShowProjects] = useState(true);
   return (
-    <div className="sidebar" data-test-id="sidebar">
+    <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
-        <li data-testid="inbox" className={active === 'inbox' ? 'active' : undefined}
+        <li
+          data-testid="inbox"
+          className={active === 'inbox' ? 'active' : undefined}
           onClick={() => {
             setSelectedProject('INBOX');
             setActive('inbox');
@@ -22,7 +24,9 @@ const Sidebar = () => {
           </StyledSpan>
           Inbox
         </li>
-        <li data-testid="today" className={active === 'today' ? 'active' : undefined}
+        <li
+          data-testid="today"
+          className={active === 'today' ? 'active' : undefined}
           onClick={() => {
             setSelectedProject('TODAY');
             setActive('today');
@@ -32,7 +36,9 @@ const Sidebar = () => {
           </StyledSpan>
           Today
         </li>
-        <li data-testid="next_7" className={active === 'next_7' ? 'active' : undefined}
+        <li
+          data-testid="next_7"
+          className={active === 'next_7' ? 'active' : undefined}
           onClick={() => {
             setSelectedProject('NEXT_7');
             setActive('next_7');
@@ -44,7 +50,10 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <div className="sidebar__middle" onClick={() => setShowProjects(!showProjects)}>
+      <div
+        className="sidebar__middle"
+        data-testid="sidebar-middle"
+        onClick={() => setShowProjects(!showProjects)}>
         <span>
           <FaChevronDown className={!showProjects ? 'hidden-projects' : undefined} />
         </span>
