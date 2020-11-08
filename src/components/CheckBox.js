@@ -9,7 +9,11 @@ const Checkbox = ({ id }) => {
   };
 
   return (
-    <div className="checkbox-holder" data-testid="checkbox-action" onClick={() => archiveTask()}>
+    <div
+      className="checkbox-holder"
+      data-testid="checkbox-action"
+      role="button"
+      onClick={() => archiveTask()}>
       <span className="checkbox" />
     </div>
   );
